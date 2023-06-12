@@ -2,17 +2,19 @@
 // Created on: March 2023
 // This file contains the JS functions for index.html
 
-'use strict'
+"use strict"
+
 /**
- * Calculates fahrenheit to celsius and celsius to fahrenheit using the user's input. 
+
  */
-/** 
- * borrowed from Cristiano's ISC2O-unit3-04
- */
-function calculate(input) {
-  if (input == 'fahrenheit') {
-    const fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
-    const answer = ((fahrenheit - 32) * (5 / 9)).toFixed(2);
-    document.getElementById("output-celsius").innerHTML = "<p>This temperature is " + answer + "°C + in fahrenheit</p>";
-  }
+function enterClicked() {
+  //input
+  const fahrenheit = parseInt(document.getElementById("fahrenheit").value)
+
+  //process
+  const celsius = ((fahrenheit - 32) * 5) / 9
+
+  //output
+  document.getElementById("fahrenheit-converted-to-celsius").innerHTML =
+    "This is the temperature in celsius: " + celsius.toFixed(2) + "C°"
 }
